@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        body{
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .hv:hover{ background-color: #1aff02;
+        }
+
+    </style>
+</head>
+<body>
+<table border="1" >
+    <caption ><b>bang gia tri bmi</b></caption>
+    <tr>
+        <td rowspan="2" >KẾT QỦA</td>   
+        <td ><input style="height: 40px" id="chieucao" value="" placeholder="nhập chiều cao" ></td>
+        <td ><input  style="height: 40px" id="cannang" value="" placeholder="nhập cân nặng" ></td>
+        <td rowspan="2"  ><button class="hv" style="height: 40px" id="check" onclick="check()" >Kiểm tra</button></td>
+    </tr>
+    <tr>
+        <td id="kq" colspan="2" style=" text-align: center; height: 40px"></td>
+    </tr>
+</table>
+<script >
+    function check() {
+let  a = +document.getElementById("chieucao").value;
+let  b = +document.getElementById("cannang").value;
+       bmi = +b/Math.pow(a,2);
+       (bmi<18)? document.getElementById("kq").innerText= "Underweight" : (bmi<25)? document.getElementById("kq").innerText= "Normal": (bmi<30)? document.getElementById("kq").innerText= "Overweight"  :document.getElementById("kq").innerText= "Obese";
+    }
+</script>
+</body>
+</html>
